@@ -1,0 +1,27 @@
+import { useState } from "react";
+
+function App() {
+  const [data, setData] = useState({
+    name: "",
+    skills: "",
+    experience: ""
+  });
+
+  const handleChange = (e) => {
+    setData({...data, [e.target.name]: e.target.value});
+  };
+
+  return (
+    <div className="p-5">
+      <h1>Resume Builder</h1>
+
+      <input name="name" placeholder="Name" onChange={handleChange} />
+      <textarea name="skills" placeholder="Skills" onChange={handleChange} />
+      <textarea name="experience" placeholder="Experience" onChange={handleChange} />
+
+      <button>Generate Resume</button>
+    </div>
+  );
+}
+
+export default App;
